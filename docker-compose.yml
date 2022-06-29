@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  website_prod:
+    platform: linux/amd64
+    container_name: website_prod
+    build:
+      context: "."
+      target: prod
+      args:
+        USER_ID: "${USER_ID:-1000}"
+        GROUP_ID: "${GROUP_ID:-1000}"
+    ports:
+      - "5001:5001"
+    volumes:
+      - "./app:/usr/src/api/app"
+  website_debug:
+    platform: linux/amd64
+    container_name: website_debug
+    build:
+      context: "."
+      target: debug
+      args:
+        USER_ID: "${USER_ID:-1000}"
+        GROUP_ID: "${GROUP_ID:-1000}"
+    ports:
+      - "5001:5001"
+      - "5678:5678"
+    volumes:
+      - "./app:/usr/src/api/app"
