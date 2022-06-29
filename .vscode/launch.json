@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python Attach",
+            "type": "python",
+            "request":"attach",
+            "pathMappings":[
+                {
+                    "localRoot":"${workspaceFolder}/app/",
+                    "remoteRoot":"/usr/src/api/app"
+                }
+            ],
+            "port":5678,
+            "host":"0.0.0.0"
+        },
+    ]
+}
