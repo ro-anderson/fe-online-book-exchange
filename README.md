@@ -38,14 +38,16 @@ pytest==6.2.5
 
 - with docker:
 ```sh
-# change TARGET with prod or debug
-docker-compose build --no-cache website_<TARGET>
-docker-compose up website_debug
+$ git clone git@github.com:ro-anderson/frontend-PJI240.git
+$ cd frontend-PJI240
+# change <TARGET> with prod or debug
+$docker-compose build --no-cache website_<TARGET>
+$docker-compose up website_debug
 ```
 - no docker:
 ```bash
-$ git clone git@github.com:shinokada/fastapi-web-starter.git
-$ cd fastapi-web-starter
+$ git clone git@github.com:ro-anderson/frontend-PJI240.git
+$ cd frontend-PJI240
 # install packages
 $ pip install -r requirements.txt
 # start the server
