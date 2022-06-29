@@ -71,9 +71,9 @@ $ cd fastapi-web-starter
 # Run tests
 $ pytest -v
 ```
-## Based on:
+## References:
 
-Based on:
+the initial structure of the project was made following the article:
 
 [https://shinichiokada.medium.com/](https://shinichiokada.medium.com/) ([Building a Website Starter with FastAPI](https://levelup.gitconnected.com/building-a-website-starter-with-fastapi-92d077092864)).
 
