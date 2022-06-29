@@ -40,7 +40,7 @@ pytest==6.2.5
 ```sh
 # change TARGET with prod or debug
 docker-compose build --no-cache website_<TARGET>
-docker-compose up emcasacrm_debug
+docker-compose up website_debug
 ```
 - no docker:
 ```bash
