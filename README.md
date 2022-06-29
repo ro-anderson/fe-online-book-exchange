@@ -1,9 +1,5 @@
 # PJI240 - Frontend
 
-Based on:
-
-[https://shinichiokada.medium.com/](https://shinichiokada.medium.com/) ([Building a Website Starter with FastAPI](https://levelup.gitconnected.com/building-a-website-starter-with-fastapi-92d077092864)).
-
 ## Overview
 
 A static simple website ready to deploy to Heroku.
@@ -75,3 +71,9 @@ $ cd fastapi-web-starter
 # Run tests
 $ pytest -v
 ```
+## Based on:
+
+Based on:
+
+[https://shinichiokada.medium.com/](https://shinichiokada.medium.com/) ([Building a Website Starter with FastAPI](https://levelup.gitconnected.com/building-a-website-starter-with-fastapi-92d077092864)).
+
