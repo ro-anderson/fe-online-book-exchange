@@ -1,10 +1,15 @@
 {% extends "base.html" %} 
-{% block title %}
-Cadastre-se
-{% endblock %} 
-{% block content %}
-<body background="{{ url_for('static', filename='light_green.jpg') }}"> 
+{% set active_page = "signup" %}
+{% block title %}Signup{% endblock %} 
 
+{% block head %}
+{{ super() }}
+
+
+{% endblock %}
+
+{% block page_content %}
+<h1 class="cap">Signup</h1>
 <form method="POST">
     <div class="form-group">
       <label for="nome">Nome:</label>
@@ -49,4 +54,10 @@ Cadastre-se
     <br />
     <button type="submit" class="btn btn-primary">Submeter</button>
   </form>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+
+
 {% endblock %}
