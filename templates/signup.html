@@ -1,0 +1,52 @@
+{% extends "base.html" %} 
+{% block title %}
+Cadastre-se
+{% endblock %} 
+{% block content %}
+<body background="{{ url_for('static', filename='light_green.jpg') }}"> 
+
+<form method="POST">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nome"
+        name="nome"
+        placeholder="Digite seu nome"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Digite seu e-mail"
+      />
+    </div>
+    <div class="form-group">
+      <label for="senha1">Crie uma senha de no mínimo 6 caracteres:</label>
+      <input
+        type="password"
+        class="form-control"
+        id="senha1"
+        name="senha1"
+        placeholder="Digite sua senha"
+      />
+    </div>
+    <div class="form-group">
+      <label for="senha2">Confirme sua senha:</label>
+      <input
+        type="password"
+        class="form-control"
+        id="senha2"
+        name="senha2"
+        placeholder="Confirme sua senha"
+      />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submeter</button>
+  </form>
+{% endblock %}

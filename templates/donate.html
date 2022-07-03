@@ -1,0 +1,32 @@
+{% extends "base.html" %} 
+{% block title %}
+Doe
+{% endblock %} 
+{% block content %}
+<body background="{{ url_for('static', filename='light_green.jpg') }}"> 
+
+<form method="POST">
+    <div class="form-group">
+      <label for="titulo">Título:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="titulo"
+        name="titulo"
+        placeholder="Titulo do livro"
+      />
+    </div>
+    <div class="form-group">
+      <label for="genero">Gênero</label>
+      <input
+        type="text"
+        class="form-control"
+        id="genero"
+        name="genero"
+        placeholder="Gênero do livro"
+      />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submeter</button>
+  </form>
+{% endblock %}
