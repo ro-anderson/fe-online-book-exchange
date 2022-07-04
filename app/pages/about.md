@@ -1,4 +1,5 @@
-# About
+# Sobre
+O sistema proposto tem como primícias corroborar com a educação e formação do conhecimento do cidadão, através da leitura de livros físicos, visando lidar com a desigualdade social, possibilitando acesso a todos, por meio de doação ou empréstimo, oriundo de um cooperador possuidor de livros. O projeto busca, através do software, criar um site por meio de banco de dados interativo e dinâmico, onde leitores e doadores possam realizar um breve cadastro formando uma rede cooperativa de leitura. 
 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse velit nunc, tincidunt sed tempus eget, luctus venenatis ex. Morbi et felis pharetra, rhoncus erat et, feugiat ipsum. Nunc lorem elit, pellentesque ac magna et, luctus volutpat odio. Suspendisse potenti. Praesent interdum ligula nunc, non tempor mi congue et. Pellentesque tellus neque, lacinia vitae auctor ac, interdum ac mauris. Suspendisse et nunc in nibh iaculis semper vel ac sem. In vel eros eget ipsum semper dapibus vel in nibh. Nunc ac augue id nulla ultrices porta. Nullam consectetur sed purus eu congue.
+site da faculdade: **[UNIVESP](https://univesp.br/)**
