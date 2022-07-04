@@ -1,10 +1,17 @@
 {% extends "base.html" %} 
-{% block title %}
-Login
-{% endblock %} 
-{% block content %}
+{% set active_page = "login" %}
+
+{% block title %}Login{% endblock %} 
+
+{% block head %}
+{{ super() }}
+
+
+{% endblock %}
+
+{% block page_content %}
+<h1 class="cap">Login</h1>
   <form method="POST">
-    <h3 align="center">Entrar</h3>
     <div class="form-group">
       <label for="email">Endereço de email:</label>
       <input
@@ -26,6 +33,12 @@ Login
       />
     </div>
     <br />
-    <button type="submit" class="btn btn-primary">Entrar</button>
+    <button type="submit" class="btn btn-primary">Entrar</button>  
   </form>
   {% endblock %}
+
+{% block scripts %}
+{{ super() }}
+
+
+{% endblock %}
