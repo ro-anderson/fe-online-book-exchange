@@ -5,7 +5,7 @@ from fastapi.templating import Jinja2Templates
 import uvicorn
 
 from app.library.helpers import *
-from app.routers import twoforms, unsplash, accordion, login, signup, donate
+from app.routers import twoforms, unsplash, accordion, login, signup, donate, email
 
 
 app = FastAPI()
@@ -21,6 +21,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(login.router)
 app.include_router(signup.router)
 app.include_router(donate.router)
+app.include_router(email.router)
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
@@ -34,4 +35,4 @@ async def show_page(request: Request, page_name: str):
     return templates.TemplateResponse("page.html", {"request": request, "data": data})
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=5001)
+    uvicorn.run(app, host="0.0.0.0", port=5000)

@@ -3,7 +3,7 @@ FROM python:3.9 as base
 
 # Environment variables to configure Flask
 ENV API_HOST="0.0.0.0" \
-    API_PORT="5001" \
+    API_PORT="5000" \
     API_GROUP="fastapi" \
     API_USER="fastapi" \
     API_DIR="/usr/src/api" \

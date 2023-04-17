@@ -1,28 +1,24 @@
-<center>
-  <div class="text-center" style="width: 80%;">
-    <h1>Troca na Escola 📚</h1>
+<h1>Bem-vinde ao QueroLer 📚</h1>
 
-    <p>Doador 🤝 Quem quer ler</p>
+Doador 🤝 Quem quer ler
 
-    <p>- Doe ou busque seu livro de interesse</p>
+- Doe ou busque seu livro de interesse
 
-    <button type="button" class="btn btn-primary" onclick="window.location.href='/donate'">Quero Doar</button>
+<button type="button" class="btn btn-primary">QueroDoar</button>
 
-    <div class="topnav mt-3">
-      <input type="text" placeholder="Digite o nome do livro que procura 🔎  " style="width: 305px;">
-      <button type="button" class="btn btn-outline-primary">buscar</button>
-    </div>
-  </div>
-</center>
+<div class="topnav">
+  <input type="text" placeholder="Buscar 🔎 ">
+  <button type="button" class="btn btn-outline-primary">search</button>
+</div>
 <center><div class="card" style="width: 40rem;"></center>
   <div class="card-header">
-    <center><h5>Achou!<br>O livro que procura está aqui 😉</h5></center>
-    <center><p>Busque pelo título do livro da forma que quiser<br>quanto mais for parecido com o título do livro<br>achamos ele mais fácil para você, ok?<br><br>Vamos nessa, amigo leitor! 📚</p></center>
+    <center><h5>Livraria solidária disponível</h5></center>
   </div>
   <table class="card-table table">
     <thead id="search-header">
       <tr>
         <th scope="col"><center>Título</center></th>
+        <th scope="col"><center>user_id 🔗 </center></th>
         <th scope="col"><center>Email</center></th>
       </tr>
     </thead>
@@ -47,17 +43,15 @@ async function sendEmail(donationId) {
     const donationResponse = await fetch(`http://0.0.0.0:5001/api/donations?donation_id=${donationId}`);
     const donationData = await donationResponse.json();
     const userId = donationData.data[0].relationships.owner.id;
-    const bookName = donationData.data[0].attributes.name;
 
     // Fetch user details
     const userResponse = await fetch(`http://0.0.0.0:5001/api/users?user_id=${userId}`);
     const userData = await userResponse.json();
     const recipient_email = userData.data[0].attributes.email;
-    const recipient_name = userData.data[0].attributes.name;
 
     // Collect person's name and email
-    const person_name = prompt("Por favor digite seu nome de contato:");
-    const person_contact = prompt("Por favor, entre com seu contato (email ou celular):");
+    const person_name = prompt("Please enter your name:");
+    const person_email = prompt("Please enter your email:");
 
     // Send email
     const response = await fetch("/send-email", {
@@ -67,12 +61,12 @@ async function sendEmail(donationId) {
         },
         body: JSON.stringify({
             recipient_email: recipient_email,
-            message: `Olá "${recipient_name}",  ${person_name}  com o contato (email ou celular): ${person_contact} está interessado no livro: "${bookName}". Basta agora entrar em contato com essa pessoa para vocês combinarem a troca! Boa troca - \n\n Time Troca Na Escola`,
+            message: `Here is your personalized message from QueroLer! The person ${person_name} with email ${person_email} pressed the Email button and is interested in your book.`,
         }),
     });
 
     if (response.ok) {
-        alert("Email enviado! Agora é só aguardar o retorno da pessoa doadora :)");
+        alert("Email sent!");
     } else {
         alert("Failed to send email.");
     }
@@ -97,21 +91,17 @@ function performSearch() {
             // Move the emailBtn creation here
             const emailBtn = document.createElement('td');
             const button = document.createElement('button');
-            button.textContent = "Entrar em contato ✨";
+            button.textContent = "Email";
             button.className = "btn btn-primary";
             button.onclick = () => sendEmail(result.id);
-            
-            const centerElement = document.createElement('center');
-            centerElement.appendChild(button);
-            //emailBtn.appendChild(button);
-            emailBtn.appendChild(centerElement);
+            emailBtn.appendChild(button);
 
             name.innerHTML = `<center>${result.attributes.name}</center>`;
             //userid.innerHTML = `<center><a href="#" onclick="sendEmail('${result.relationships.owner.email}')">${result.relationships.owner.id}</a></center>`;
             userid.innerHTML = `<center>${result.relationships.owner.id}</center>`;
 
             row.appendChild(name);
-            //row.appendChild(userid);
+            row.appendChild(userid);
             row.appendChild(emailBtn); // Add the email button to the row
             tableBody.appendChild(row);
         });

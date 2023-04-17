@@ -4,50 +4,63 @@
 
 {% block head %}
 {{ super() }}
-
-
 {% endblock %}
 
 {% block page_content %}
-<h1 class="cap">Doe</h1>
-<form method="POST">
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="email"
-        name="email"
-        placeholder="Email de contato"
-      />
+<h1 class="cap text-center">Doe</h1>
+
+<center><p>Sabe aquele livro prontinho para doar?<br>Chegou a vez dele!<br>Precisamos de poucas infos suas<br>para termos o seu contato quando alguém tiver interesse<br>na sua doação</p></center>
+
+{% if success %}
+  <div class="alert alert-success" role="alert">
+    Doador e doação cadastrados corretamente!
+  </div>
+{% elif success is not none %}
+  <div class="alert alert-danger" role="alert">
+    Houve um problema com o registro ou doação. Por favor, tente novamente.
+  </div>
+{% endif %}
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <form method="POST">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Email de contato"
+              />
+            </div>
+            <div class="form-group">
+              <label for="titulo">Título:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="titulo"
+                name="titulo"
+                placeholder="Titulo do livro"
+              />
+            </div>
+            <div class="form-group">
+              <label for="nome">Nome:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nome"
+                name="nome"
+                placeholder="Como podemos te chamar?"
+              />
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Submeter</button>
+        </form>
     </div>
-    <div class="form-group">
-      <label for="titulo">Título:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="titulo"
-        name="titulo"
-        placeholder="Titulo do livro"
-      />
-    </div>
-    <div class="form-group">
-      <label for="genero">Gênero</label>
-      <input
-        type="text"
-        class="form-control"
-        id="genero"
-        name="genero"
-        placeholder="Gênero do livro"
-      />
-    </div>
-    <br />
-    <button type="submit" class="btn btn-primary">Submeter</button>
-  </form>
+</div>
 {% endblock %}
 
 {% block scripts %}
 {{ super() }}
-
-
 {% endblock %}
