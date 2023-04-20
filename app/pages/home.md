@@ -2,28 +2,25 @@
   <div class="text-center" style="width: 80%;">
     <h1>Troca na Escola 📚</h1>
 
-    <p>Doador 🤝 Quem quer ler</p>
+    <p>Juntos pelo aprendizado dos nossos pequenos.</p>
 
-    <p>- Doe ou busque seu livro de interesse</p>
-
-    <button type="button" class="btn btn-primary" onclick="window.location.href='/donate'">Quero Doar</button>
-
+    <!-- <p>- Doe ou busque seu livro de interesse</p> -->
     <div class="topnav mt-3">
-      <input type="text" placeholder="Digite o nome do livro que procura 🔎  " style="width: 305px;">
-      <button type="button" class="btn btn-outline-primary">buscar</button>
+      <input type="text" placeholder="Escreva o título do livro" style="width: 305px; font-size: 14px;">
+      <!-- <input type="text" placeholder="Escreva o título do livro" style="width: 305px;"> -->
+      <button type="button" class="btn btn-outline-primary">Buscar  🔎 </button>
     </div>
   </div>
-</center>
-<center><div class="card" style="width: 40rem;"></center>
-  <div class="card-header">
-    <center><h5>Achou!<br>O livro que procura está aqui 😉</h5></center>
-    <center><p>Busque pelo título do livro da forma que quiser<br>quanto mais for parecido com o título do livro<br>achamos ele mais fácil para você, ok?<br><br>Vamos nessa, amigo leitor! 📚</p></center>
-  </div>
+  <div class="text-center">
+  <p style="display: inline-block; margin-right: 10px;"><span style="font-size: 1rem;">Tem algum livro didático para doação?</span></p>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='/donate'">Quero doar 👍</button>
+</div>
+
   <table class="card-table table">
     <thead id="search-header">
       <tr>
-        <th scope="col"><center>Título</center></th>
-        <th scope="col"><center>Email</center></th>
+        <th scope="col"><center>Livro</center></th>
+        <th scope="col"><center></center></th>
       </tr>
     </thead>
     <tbody id="search-results">
@@ -31,6 +28,13 @@
     </tbody>
   </table>
 </div>
+
+</center>
+<center><div class="card" style="width: 40rem;"></center>
+  <div class="card-header">
+    <center><h4><br>O livro que você procura pode estar aqui!</h4></center>
+    <center><p>Faça sua busca pelo título do livro.<br>Encontrou um doador disponível?<br>Clique em "Tenho Interesse" para combinar a troca com o doador.<br><br>Vamos nessa? 📚</p></center>
+  </div>
 
 <script>
 function hideSearchCard() {
@@ -97,7 +101,7 @@ function performSearch() {
             // Move the emailBtn creation here
             const emailBtn = document.createElement('td');
             const button = document.createElement('button');
-            button.textContent = "Entrar em contato ✨";
+            button.textContent = "Tenho interesse✨";
             button.className = "btn btn-primary";
             button.onclick = () => sendEmail(result.id);
             
@@ -127,3 +131,4 @@ document.querySelector('input[type="text"]').addEventListener('keydown', (event)
     }
 });
 </script>
+

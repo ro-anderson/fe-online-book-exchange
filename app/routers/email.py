@@ -18,7 +18,7 @@ async def send_email(email_content: EmailContent):
     msg.set_content(email_content.message)
     print(f"email content:\n {email_content}")
 
-    msg["Subject"] = "Personalized Message from QueroLer"
+    msg["Subject"] = "Alguém tem interesse no seu livro 👀 [Troca na Escola]"
     msg["From"] = YOUR_EMAIL
     msg["To"] = email_content.recipient_email
 
