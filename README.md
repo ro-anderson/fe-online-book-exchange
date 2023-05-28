@@ -50,7 +50,7 @@ $ pip install -r requirements.txt
 $ uvicorn app.main:app --reload --port 8080
 ```
 
-Visit [http://0.0.0.0:5001/](http://0.0.0.0:5001/).
+Visit [http://0.0.0.0:5000/](http://0.0.0.0:5000/).
 
 ![Starting](./images/image-1.png)
 

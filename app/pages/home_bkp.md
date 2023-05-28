@@ -16,6 +16,13 @@
   <button type="button" class="btn btn-primary" onclick="window.location.href='/donate'">Quero doar 👍</button>
 </div>
 
+</center>
+<center><div class="card" style="width: 40rem;"></center>
+  <div class="card-header">
+    <center><h4><br>O livro que você procura pode estar aqui!</h4></center>
+    <center><p>Faça sua busca pelo título do livro.<br>Encontrou um doador disponível?<br>Clique em "Tenho Interesse" para combinar a troca com o doador.<br><br>Vamos nessa? 📚</p></center>
+  </div>
+
   <table class="card-table table">
     <thead id="search-header">
       <tr>
@@ -28,13 +35,6 @@
     </tbody>
   </table>
 </div>
-
-</center>
-<center><div class="card" style="width: 40rem;"></center>
-  <div class="card-header">
-    <center><h4><br>O livro que você procura pode estar aqui!</h4></center>
-    <center><p>Faça sua busca pelo título do livro.<br>Encontrou um doador disponível?<br>Clique em "Tenho Interesse" para combinar a troca com o doador.<br><br>Vamos nessa? 📚</p></center>
-  </div>
 
 <script>
 function hideSearchCard() {
@@ -101,7 +101,7 @@ function performSearch() {
             // Move the emailBtn creation here
             const emailBtn = document.createElement('td');
             const button = document.createElement('button');
-            button.textContent = "Tenho interesse✨";
+            button.textContent = "Falar com doador ✨";
             button.className = "btn btn-primary";
             button.onclick = () => sendEmail(result.id);
             
@@ -131,4 +131,3 @@ document.querySelector('input[type="text"]').addEventListener('keydown', (event)
     }
 });
 </script>
-

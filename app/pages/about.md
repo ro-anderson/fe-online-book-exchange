@@ -1,5 +1,5 @@
-# Sobre
-O sistema proposto tem como primícias corroborar com a educação e formação do conhecimento do cidadão, através da leitura de livros físicos, visando lidar com a desigualdade social, possibilitando acesso a todos, por meio de doação ou empréstimo, oriundo de um cooperador possuidor de livros. O projeto busca, através do software, criar um site por meio de banco de dados interativo e dinâmico, onde leitores e doadores possam realizar um breve cadastro formando uma rede cooperativa de leitura. 
-
-
-site da faculdade: **[UNIVESP](https://univesp.br/)**
+<div>
+  <h1 style="text-align: center;">Sobre<br></h1>
+  <p style="text-align: inter-word;">Somos alunos de diferentes períodos e cursos da Universidade Virtual do Estado de São Paulo - UNIVESP e este é nosso protótipo para a disciplina de Projeto Integrador I de 2023 e nosso objetivo é o desenvolvimento de um software com framework web que através de noções de banco de dados e praticando controle de versão, forneça um protótipo de página web que viabilize a troca de livros didáticos ou paradidáticos entre a comunidade do Colégio Cavallieri.<br><br></p>
+</div>
+  <p style="text-align: center;">contato: trocanaescola@gmail.com<br></p>
