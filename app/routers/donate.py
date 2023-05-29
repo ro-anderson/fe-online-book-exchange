@@ -36,7 +36,7 @@ async def post_donate(request: Request, nome: str = Form(...), email: str = Form
                     "user_id": user_id
                 },
             }
-            response = await client.post("{BASE_URL}/api/donations", json=donation_data)
+            response = await client.post(f"{BASE_URL}/api/donations", json=donation_data)
             success = response.status_code == 200
         else:
             success = False
