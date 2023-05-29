@@ -37,6 +37,14 @@
   </div>
 
 <script>
+// Determine the base URL depending on the environment (production or development)
+var BASE_URL = '';
+if (window.location.hostname === "localhost" || window.location.hostname === "0.0.0.0") {
+    BASE_URL = 'http://0.0.0.0:5001';
+} else {
+    BASE_URL = 'https://be-troca-na-escola.herokuapp.com';
+}
+
 function hideSearchCard() {
     const searchCard = document.querySelector('.card');
     const searchHeader = document.querySelector('#search-header');
@@ -48,13 +56,13 @@ hideSearchCard();
 
 async function sendEmail(donationId) {
     // Fetch donation details
-    const donationResponse = await fetch(`http://0.0.0.0:5001/api/donations?donation_id=${donationId}`);
+    const donationResponse = await fetch(`${BASE_URL}/api/donations?donation_id=${donationId}`);
     const donationData = await donationResponse.json();
     const userId = donationData.data[0].relationships.owner.id;
     const bookName = donationData.data[0].attributes.name;
 
     // Fetch user details
-    const userResponse = await fetch(`http://0.0.0.0:5001/api/users?user_id=${userId}`);
+    const userResponse = await fetch(`${BASE_URL}/api/users?user_id=${userId}`);
     const userData = await userResponse.json();
     const recipient_email = userData.data[0].attributes.email;
     const recipient_name = userData.data[0].attributes.name;
@@ -88,7 +96,7 @@ function performSearch() {
 
     async function fetchData() {
         const query = document.querySelector('input[type="text"]').value;
-        const response = await fetch(`http://0.0.0.0:5001/api/donations?name=${query}`);
+        const response = await fetch(`${BASE_URL}/api/donations?name=${query}`);
         const results = await response.json();
         const tableBody = document.querySelector('#search-results');
         tableBody.innerHTML = '';
